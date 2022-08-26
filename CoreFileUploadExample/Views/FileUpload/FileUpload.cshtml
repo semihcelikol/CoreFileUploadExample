@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <form id="fileUploadForm" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="file" id="file"  />
+            <input type="button" class="btn btn-primary" id="btnUploadFile" value="Yükle" />
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var btnUploadFile = $("#btnUploadFile");
+
+            btnUploadFile.click(function (e) {
+
+                var fd = new FormData();
+                var files = $('#file')[0].files;
+
+                // Check file selected or not
+                if(files.length > 0 ) {
+                    fd.append('formFile',files[0]);
+
+                    $.ajax({
+                        url: 'FileUpload',
+                        type: 'POST',
+                        data: fd,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function(result) {
+                            alert(result);
+                        },
+                        error: function(error) {
+                            alert(error);
+                        }
+                    });
+
+                } else {
+                    alert("Lütfen dosya seçiniz");
+                }
+        
+            });
+
+        });
+
+    </script>
+}
