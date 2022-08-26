@@ -3,3 +3,11 @@
 ################################################################################
 
 /CoreFileUploadExample/.vs/CoreFileUploadExample/v17/.suo
+*.config
+*.suo
+*.json
+*.dll
+/CoreFileUploadExample/bin/Debug/net5.0/CoreFileUploadExample.Views.pdb
+/CoreFileUploadExample/bin/Debug/net5.0/CoreFileUploadExample.pdb
+/CoreFileUploadExample/bin/Debug/net5.0/CoreFileUploadExample.exe
+/CoreFileUploadExample/obj
